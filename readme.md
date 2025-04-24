@@ -1,4 +1,4 @@
-Absolutely! Here's the updated `README.md` content that includes **both static and realtime dashboards**:
+GTFS Transit Viewer: Static & Realtime Dashboard (Streamlit App)
 
 ---
 
