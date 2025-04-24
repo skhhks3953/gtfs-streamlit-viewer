@@ -1,107 +1,98 @@
-# GTFS Streamlit Viewer
-Absolutely! Here's a clean and professional `README.md` tailored for your GTFS Streamlit project:
+Absolutely! Here's the updated `README.md` content that includes **both static and realtime dashboards**:
 
 ---
 
 ```markdown
-# 🚌 GTFS Streamlit Viewer
+# 🚍 GTFS Transit Viewer: Static & Realtime Dashboard
 
-A simple, interactive web app built with [Streamlit](https://streamlit.io/) to visualize **GTFS static schedule data** (General Transit Feed Specification). Easily explore bus stop schedules, routes, and arrival times from a local GTFS `.zip` file.
-
----
-
-## 🚀 Features
-
-- 📦 Load and parse GTFS ZIP files (`.txt` files inside)
-- 🔍 Search and filter by **Stop ID** or **Stop Description**
-- ⏱️ View upcoming bus arrival times at a selected stop
-- 🗂️ Explore `stops.txt` and `stop_times.txt` in table format
-- 📆 Automatically detects today's date & weekday to filter valid services
+A lightweight Streamlit web app to visualize **GTFS (General Transit Feed Specification)** data — both **static** and **realtime** — for RapidKL buses. This project serves as a demonstration and learning tool for transit data integration and visualization.
 
 ---
 
-## 🖼️ Screenshot
+## 📊 Features
 
-*(You can add a screenshot here later if you'd like — just drag it into your repo and update the Markdown)*
+### ✅ GTFS Static Viewer
+- Displays scheduled bus arrival times based on GTFS `stop_times.txt`
+- Allows filtering by:
+  - **Stop ID**
+  - **Stop Name**
+  - **Stop Description**
+- Shows only upcoming scheduled buses based on the current time and calendar rules
 
----
-
-## 🛠️ How to Run
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/your-username/gtfs-streamlit-viewer.git
-cd gtfs-streamlit-viewer
-```
-
-2. **Install dependencies**
-
-```bash
-pip install -r requirements.txt
-```
-
-3. **Place your GTFS zip file**
-
-Place your GTFS ZIP file in the root directory and rename it (if needed) as:
-
-```bash
-gtfs_rapid_bus_kl.zip
-```
-
-*(Or update the filename in `app.py` to match yours)*
-
-4. **Run the Streamlit app**
-
-```bash
-streamlit run app.py
-```
+### 📡 GTFS Realtime Dashboard *(Optional Integration)*
+- Displays live bus data from a GTFS-RT (Realtime) feed
+- Visualizes real-time vehicle positions and ETAs
+- Integrates GTFS-RT feed parsing using protobuf or JSON endpoints
 
 ---
 
-## 📁 Project Structure
+## 🧪 Use Case
+This project was created as a **proof-of-concept (POC)** to:
+- Understand the structure and usage of GTFS data (static + realtime)
+- Build a simple dashboard for internal testing and demonstrations
+- Explore real-time tracking and prediction of public transit vehicles
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python**
+- **Streamlit** — for interactive UI
+- **Pandas** — for data manipulation
+- **GTFS Static Feed** — CSV files (`trips.txt`, `stop_times.txt`, etc.)
+- **GTFS-RT Feed** — parsed from JSON or protobuf
+- **GitHub** — for version control
+
+---
+
+## ▶️ How to Run
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/skhhks3953/gtfs-streamlit-viewer.git
+   cd gtfs-streamlit-viewer
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the app:
+   ```bash
+   streamlit run main.py
+   ```
+
+## 🧠 Future Enhancements
+- Live vehicle map view using `folium` or `pydeck`
+- Historical performance analysis
+- Schedule adherence metrics
+- User-based location tracking
+
+---
+
+## 📁 Sample Folder Structure
 
 ```
 gtfs-streamlit-viewer/
 │
-├── app.py                  # Streamlit app script
-├── gtfs_rapid_bus_kl.zip   # GTFS zip (replace with your data)
-├── requirements.txt        # Dependencies
-└── README.md               # This file
+├── static_gtfs/                # Extracted GTFS static data
+├── main.py                     # Streamlit app entry point
+├── GTFS_static.py              # Static viewer logic
+├── GTFS_realtime.py            # Realtime feed handler (optional)
+├── requirements.txt            # Dependencies
+└── README.md                   # Project readme
 ```
 
 ---
 
-## 📚 GTFS Reference
+## 👤 Author
 
-This app uses the following GTFS files:
-
-- `stops.txt`
-- `stop_times.txt`
-- `trips.txt`
-- `calendar.txt`
-- `routes.txt`
-
-Learn more about GTFS: [developers.google.com/transit/gtfs](https://developers.google.com/transit/gtfs)
+Created by [@skhhks3953](https://github.com/skhhks3953)
 
 ---
 
-## ✨ Future Ideas
+## 📎 License
 
-- Add map visualization for stop locations
-- Display route shapes using `shapes.txt`
-- Add calendar_dates.txt support for exceptions
-- Deploy online using Streamlit Community Cloud or Render
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🙌 Credits
-
-Built by How Yu Heng (https://github.com/skhhks3953)
+This project is intended for learning, POCs, and portfolio use. Attribution appreciated if reused.
 ```
